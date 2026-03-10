@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ಸಿದ್ದೇಶ್ವರ ಯುವಕರ ಪ್ರವಾಸ ಬಳಗ(ರೀ)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Trip Registration</div>
+        <div class="nav-links">
+            <a href="index.html">Register</a>
+            <a href="index.html#trip-details">Trip Details</a>
+            <a href="index.html#route-plan">Route Plan</a>
+            <a href="index.html#trip-map">Trip Map</a>
+            <a href="index.html#tourist-places">Places to Visit</a>
+            <a href="admin.html">Admin Login</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>ಸಿದ್ದೇಶ್ವರ ಯುವಕರ ಪ್ರವಾಸ ಬಳಗ(ರೀ)</h1>
+            <p class="hero-location">ಕೋಟೀಹಾಳ</p>
+            <p class="hero-subtitle">ಹಾಲು ಕುಡಿರಿ, ಬೈಕ್ ಹೊಡಿರಿ : By Ummi Bike Riders</p>
+            <p>Davangere → Sirsi → Yana → Gokarna → Honnavar → Apsarakonda → Murudeshwara → Kolluru → Kundapura → Maravanthe → Malpe → Udupi → Kateel → Agumbe → Karkala → Dharmasthala → Davangere</p>
+        </section>
+
+        <section class="registration-section" id="register">
+            <div class="form-card">
+                <h2>Trip Registration Form</h2>
+                <form id="registration-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number *</label>
+                        <input type="tel" id="mobile" name="mobile" required placeholder="e.g., 9876543210" pattern="[0-9]{10}">
+                        <span class="form-hint">10 digit mobile number</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle">Bike / Vehicle Number *</label>
+                        <input type="text" id="vehicle" name="vehicle" required placeholder="e.g., KA 16 AB 1234">
+                    </div>
+                    <div class="form-group">
+                        <label for="trip-date">Trip Date</label>
+                        <input type="date" id="trip-date" name="trip-date">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register Trip</button>
+                </form>
+                <div id="form-message" class="message hidden"></div>
+            </div>
+        </section>
+
+        <section class="trip-details-section" id="trip-details">
+            <h2>Trip Details</h2>
+            <div class="trip-info-cards">
+                <div class="info-card">
+                    <span class="info-icon">📍</span>
+                    <h3>Route</h3>
+                    <p>17 Stops | Full Karnataka Circuit</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">📅</span>
+                    <h3>Duration</h3>
+                    <p>2 Days 3 Nights / Bike Trip</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">🏍️</span>
+                    <h3>Distance</h3>
+                    <p>~900 km Round Trip</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">⛰️</span>
+                    <h3>Highlights</h3>
+                    <p>Beaches, Temples, Ghats, Waterfalls</p>
+                </div>
+            </div>
+            <div class="trip-description">
+                <h3>About This Bike Trip</h3>
+                <p>An epic motorcycle circuit through Karnataka—Western Ghats, Arabian Sea coast, temple towns & pristine beaches. From Davangere, ride to Sirsi & Yana's limestone caves, hit Gokarna & Honnavar beaches, Apsarakonda waterfall, Murudeshwara temple, Kolluru Mookambika, Kundapura, Maravanthe's unique sea-river stretch, Malpe & Udupi, Kateel temple, Agumbe sunset point, Karkala's Bahubali statue, Dharmasthala, and back to Davangere.</p>
+            </div>
+            <div class="trip-coordinators">
+                <h3>Coordinators</h3>
+                <div class="coordinator-grid">
+                    <div class="coordinator-card">
+                        <span class="coordinator-role">Trip Co-Ordinator</span>
+                        <p class="coordinator-name">Bucket Praveena</p>
+                        <a href="tel:7676859816" class="coordinator-mob">7676859816</a>
+                    </div>
+                    <div class="coordinator-card">
+                        <span class="coordinator-role">Sub Co-Ordinator</span>
+                        <p class="coordinator-name">Shekhar</p>
+                        <a href="tel:9731547925" class="coordinator-mob">9731547925</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="route-plan-section" id="route-plan">
+            <h2>Route Plan</h2>
+            <p class="section-subtitle">2 Days 3 Nights | Departure: <strong>5:00 AM</strong> from Davangere (Early Morning)</p>
+            <div class="route-plan-grid">
+                <div class="route-day">
+                    <h3><span class="day-num">Day 1</span> Davangere → Sirsi → Yana → Gokarna → Honnavar → Murudeshwara (~400 km)</h3>
+                    <div class="route-schedule">
+                        <p><span class="schedule-time">5:00 AM</span> <strong>Departure</strong> from Davangere</p>
+                        <p><span class="schedule-time">7:30 AM</span> <strong>Tiffin Break</strong> — Sirsi (Tea, snacks, light breakfast)</p>
+                        <p><span class="schedule-time">9:00 AM</span> Yana caves, Gokarna beaches</p>
+                        <p><span class="schedule-time">1:00 PM</span> <strong>Lunch Break</strong> — Gokarna / Honnavar (Coastal cuisine)</p>
+                        <p><span class="schedule-time">3:00 PM</span> Apsarakonda waterfall</p>
+                        <p><span class="schedule-time">7:30 PM</span> <strong>Dinner Break</strong> — Murudeshwara (Local dinner)</p>
+                        <p><span class="schedule-time">9:00 PM</span> <strong>Stay</strong> — Murudeshwara (Beach-side hotels / lodges)</p>
+                    </div>
+                </div>
+                <div class="route-day">
+                    <h3><span class="day-num">Day 2</span> Murudeshwara → Kolluru → Kundapura → Maravanthe → Malpe → Udupi → Kateel → Agumbe → Karkala → Dharmasthala → Davangere (~450 km)</h3>
+                    <div class="route-schedule">
+                        <p><span class="schedule-time">5:30 AM</span> <strong>Departure</strong> from Murudeshwara</p>
+                        <p><span class="schedule-time">8:00 AM</span> <strong>Tiffin Break</strong> — Kolluru (Tea, idli, vada)</p>
+                        <p><span class="schedule-time">9:30 AM</span> Maravanthe Beach, Malpe, Udupi</p>
+                        <p><span class="schedule-time">1:00 PM</span> <strong>Lunch Break</strong> — Udupi (Famous Udupi meals)</p>
+                        <p><span class="schedule-time">2:30 PM</span> Kateel temple, Agumbe sunset point</p>
+                        <p><span class="schedule-time">5:30 PM</span> Karkala, Dharmasthala</p>
+                        <p><span class="schedule-time">7:30 PM</span> <strong>Dinner Break</strong> — En route / Dharmasthala</p>
+                        <p><span class="schedule-time">10:00 PM</span> <strong>Arrival</strong> — Davangere (Stay at home)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="route-staying">
+                <h4>Staying Information</h4>
+                <ul>
+                    <li><strong>Night 1 & 2:</strong> Murudeshwara — Beach-side hotels, lodges, homestays near temple. Budget: ₹800–2500. Book in advance for group.</li>
+                    <li><strong>Night 3:</strong> Davangere — Return home after dinner. No overnight stay outside.</li>
+                </ul>
+            </div>
+            <div class="route-tips">
+                <h4>Biker Tips</h4>
+                <ul>
+                    <li>Start at 5:00 AM sharp; cool morning ride, less traffic.</li>
+                    <li>Carry a Sunscreen</li>
+                    <li>Hand Gloves</li>
+                    <li>Head Cap</li>
+                    <li>Sunglasses</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="tourist-places-section" id="tourist-places">
+            <h2>Route Highlights</h2>
+            <p class="section-subtitle">Key stops on the ಸಿದ್ದೇಶ್ವರ ಯುವಕರ ಪ್ರವಾಸ ಬಳಗ(ರೀ)</p>
+            <div class="tourist-grid">
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/sirsi-bike.png" alt="Sirsi Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Sirsi</h3>
+                        <p>Lush green town in Western Ghats, banana plantations, Marikamba Temple. Gateway to Yana & Gokarna.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/yana-bike.png" alt="Yana Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Yana</h3>
+                        <p>Dramatic black limestone formations—Bhairaveshwara & Mohini Shikhara. Cave temple, lush forest trek.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/gokarna-bike.png" alt="Gokarna Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Gokarna</h3>
+                        <p>Famous beaches—Om, Kudle, Paradise. Temple town meets backpacker vibe. Sunset rides by the Arabian Sea.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/apsarakonda-bike.png" alt="Apsarakonda Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Apsarakonda Beach</h3>
+                        <p>Waterfall meeting hidden caves near Honnavar. Cascading waters, lush greenery. Quick stop before Murudeshwara.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/murudeshwara-bike.png" alt="Murudeshwara Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Murudeshwara</h3>
+                        <p>Iconic 123-ft Shiva statue, beach temple, gopuram. Coastal spiritual landmark on NH66.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/kolluru-bike.png" alt="Kolluru Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Kolluru</h3>
+                        <p>Mookambika Temple in Western Ghats. Sacred pilgrimage, scenic hill ride.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/maravanthe-bike.png" alt="Maravanthe Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Maravanthe Beach</h3>
+                        <p>Unique: NH66 runs between Arabian Sea & Souparnika River. Must-ride coastal stretch.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/malpe-beach-bike.png" alt="Malpe Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Malpe & Udupi</h3>
+                        <p>Malpe Beach, St. Mary's Island ferry. Udupi Sri Krishna Temple. Coastal heritage & beaches.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/kateel-bike.png" alt="Kateel Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Kateelu</h3>
+                        <p>Kateel Durga Parameshwari Temple on Nandini river island. Spiritual stop on the circuit.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/agumbe-bike.png" alt="Agumbe Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Agumbe</h3>
+                        <p>Sunset point—Cherrapunji of South. Misty ghats, rainforest. Iconic bike ride.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/karkala-bike.png" alt="Karkala Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Karkala</h3>
+                        <p>Bahubali Gommateshwara monolithic statue. Jain heritage, hill town views.</p>
+                    </div>
+                </div>
+                <div class="tourist-card">
+                    <div class="tourist-image"><img src="images/dharmasthala-bike.png" alt="Dharmasthala Bike Ride"></div>
+                    <div class="tourist-content">
+                        <h3>Dharmasthala</h3>
+                        <p>Famous temple town. Manjunatha Temple, scenic Western Ghats ride before heading back.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section" id="trip-map">
+            <h2>Trip Route Map</h2>
+            <p class="map-description">Full circuit: Davangere → Sirsi → Yana → Gokarna → Honnavar → Apsarakonda → Murudeshwara → Kolluru → Kundapura → Maravanthe → Malpe → Udupi → Kateel → Agumbe → Karkala → Dharmasthala → Davangere</p>
+            <div id="trip-map-container"></div>
+            <div class="map-legend">
+                <span><span class="legend-marker start"></span> Start</span>
+                <span><span class="legend-marker waypoint"></span> Route</span>
+                <span><span class="legend-marker end"></span> End</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Trip Registration. All rights reserved.</p>
+        <p class="footer-credit">Created By Rajesh Byali</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

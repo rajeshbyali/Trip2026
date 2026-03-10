@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Trip Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Trip Admin</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <span id="admin-logout" class="hidden">Logout</span>
+        </div>
+    </nav>
+
+    <div id="login-screen">
+        <div class="login-card">
+            <h1>Admin Login</h1>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <div id="login-message" class="message hidden"></div>
+        </div>
+    </div>
+
+    <div id="admin-dashboard" class="hidden">
+        <main class="admin-main">
+            <h1>Trip Registrations Database</h1>
+            <p class="admin-subtitle">Manage all trip registrations - Create, Read, Update, Delete</p>
+            
+            <div class="admin-actions">
+                <button id="add-new-btn" class="btn btn-primary">+ Add New Registration</button>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Mobile No</th>
+                            <th>Vehicle No</th>
+                            <th>Trip Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="registrations-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Add/Edit -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title">Add Registration</h2>
+                <button id="modal-close" class="btn-close">&times;</button>
+            </div>
+            <form id="modal-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label for="modal-name">Name *</label>
+                    <input type="text" id="modal-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-mobile">Mobile Number *</label>
+                    <input type="tel" id="modal-mobile" required pattern="[0-9]{10}">
+                </div>
+                <div class="form-group">
+                    <label for="modal-vehicle">Vehicle Number *</label>
+                    <input type="text" id="modal-vehicle" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-date">Trip Date</label>
+                    <input type="date" id="modal-date">
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
